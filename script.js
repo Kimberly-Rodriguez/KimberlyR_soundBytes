@@ -1,26 +1,27 @@
 
-// Selecting the array of keys and audio elements
-const keys = document.querySelectorAll('.key');
-const audios = document.querySelectorAll('audio')
+const keys = document.querySelectorAll(".key");
 
 
-function playSound(event){
-const keyCode = event.keyCode || event.target.getAttribute('data-key');
-// console.log("keyCode", keyCode)
-const audio = document.querySelector(`audio[data-key="${keyCode}"]`);
-// console.log("audio", audio)
-const key = document.querySelector(`.key[data-key="${keyCode}"]`)
-// console.log("key", key)
-if(!audio) return;
+function playSound(event) {
+  const keyCode = event.keyCode || event.target.getAttribute("data-key");
+  const audio = document.querySelector(`audio[data-key="${keyCode}"]`);
+  const key = document.querySelector(`.key[data-key="${keyCode}"]`);
 
-audio.currentTime = 0 
-audio.play();
+  if (!audio) return;
 
-key.classList.add('playing')
+  audio.currentTime = 0; 
+  audio.play();
 
+  key.classList.add("playing");
 }
 
 
+function removeTransition(event) {
+  if (event.propertyName !== "transform") return; 
+  this.classList.remove("playing");
+}
 
-keys.forEach(key => key.addEventListener('click', playSound));
-document.addEventListener('keydown', playSound)
+
+keys.forEach((key) => key.addEventListener("transitionend", removeTransition));
+document.addEventListener("keydown", playSound);
+keys.forEach((key) => key.addEventListener("click", (event) => playSound({ keyCode: event.target.getAttribute("data-key") }))); // Add click support
