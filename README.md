@@ -30,7 +30,7 @@ The **soundBytes DrumKit** lets users play multiple virtual instruments using th
 
 1. Clone this repository:  
    ```sh  
-   git clone https://github.com/yourusername/soundBytes-DrumKit.git  
+   git clone git@github.com:Kimberly-Rodriguez/KimberlyR_soundBytes.git 
 
   Open index.html in your browser.
 
