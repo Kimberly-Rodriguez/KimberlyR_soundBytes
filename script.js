@@ -4,6 +4,10 @@ const keys = document.querySelectorAll(".key");
 
 function playSound(event) {
   const keyCode = event.keyCode || event.target.getAttribute("data-key");
+
+  // Get the currently active instrument
+  const activeInstrument = document.querySelector(".active-instrument");
+
   const audio = document.querySelector(`audio[data-key="${keyCode}"]`);
   const key = document.querySelector(`.key[data-key="${keyCode}"]`);
 
@@ -43,6 +47,7 @@ function showSlides(n) {
   
   for (let i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";  
+    slides[i].classList.remove("active-instrument");
   }
   
   for (let i = 0; i < dots.length; i++) {
@@ -51,6 +56,7 @@ function showSlides(n) {
   
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
+  slides[slideIndex - 1].classList.add("active-instrument");
 }
 
 
