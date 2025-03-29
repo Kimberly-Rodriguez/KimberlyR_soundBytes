@@ -1,3 +1,7 @@
+
+* {box-sizing:border-box}
+
+
 html {
   font-size: 10px;
   background: url("../images/background.jpg") bottom center;
@@ -6,6 +10,7 @@ html {
 
 body,
 html {
+  height: 100%;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
@@ -14,9 +19,12 @@ html {
 .keys {
   display: flex;
   flex: 1;
-  min-height: 100vh;
+  min-height: 85vh; 
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 0; 
+  
 }
 
 .key {
@@ -49,4 +57,78 @@ kbd {
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   color: #ffc600;
+}
+
+Slideshow container
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {
+  display: none;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: #ffc600;
+  font-weight: bold;
+  font-size: 24px;
+  transition: 0.3s;
+  border-radius: 5px;
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.dot.active {
+  background-color: #717171;
+}
+
+.title {
+  text-align: center;
+  color: white;
+  font-size: 10rem;
+  text-shadow: 4px 4px 10px black; 
+  position: absolute;
+  top: 20%; 
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  margin-bottom: 2rem; 
+}
+
+.warning {
+  text-align: center;
+  color: #ffcc00; 
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 1rem; 
+  text-shadow: 2px 2px 5px black;
 }
