@@ -43,13 +43,14 @@ The **soundBytes DrumKit** lets users play multiple virtual instruments using th
 
   Expand functionality by incorporating additional instruments.
 
-  Future Improvements
+  Future Improvements:
+
     🎛️ Add volume control and sound customization.
 
     🥁 Implement a recording feature.
 
     🎸 Introduce more instruments for a full virtual band.
 
-  🌍 Make it mobile-friendly for touch interactions.
+    🌍 Make it mobile-friendly for touch interactions.
 
   Enjoy making music with the soundBytes DrumKit! 🚀🥁🎸
